@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import Whatsapp from "../components/Whatsapp";
 import ScrollToTop from "../components/ScrollToTop";
 import UseScrollToTop from "../components/useScrollToTop";
-import Homepage from "./homepage/Homepage/Homepage";
+import Homepage from "./homepage/Homepage";
 
 const isUnderConstruction = false;
 

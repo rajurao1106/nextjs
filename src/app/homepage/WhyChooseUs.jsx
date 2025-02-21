@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Zap, Target, DollarSign } from "lucide-react";
-import examining from "../../images/pages/Homepage/cost.jpg";
+import examining from "../../images/homepage/cost.jpg";
 
 const features = [
   {

@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import examining from "../../images/pages/Homepage/cost.jpg"
+import examining from "../../images/homepage/cost.jpg"
 
 export default function WhoWeAre() {
   return (

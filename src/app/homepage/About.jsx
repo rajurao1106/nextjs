@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import promise from "../../images/promise.png";
-import ad_campaign from "../../images/ad-campaign.jpg";
-import vision from "../../images/vision.jpg";
+import promise from "../../images/homepage/promise.png";
+import ad_campaign from "../../images/homepage/ad-campaign.jpg";
+import vision from "../../images/homepage/vision.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function AboutUs() {

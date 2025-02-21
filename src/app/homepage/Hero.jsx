@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 // Import images using Next.js absolute paths
-import homepage_image from "../../../images/pages/Homepage/homepage-image.png";
+import homepage_image from "../../images/homepage/homepage-image.png";
 
 export default function Hero() {
   return (
