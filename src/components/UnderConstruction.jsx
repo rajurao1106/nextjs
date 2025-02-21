@@ -9,9 +9,7 @@ export default function UnderConstruction() {
       <Image
         src={under_construction}
         alt="Under Construction"
-        className="w-[40rem] mb-6"
-        width={640}
-        height={480}
+        className="w-[40rem] mb-6 max-lg:w-[100%]"
         priority
       />
       <h1 className="text-3xl font-semibold text-gray-700">

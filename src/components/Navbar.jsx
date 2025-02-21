@@ -69,10 +69,10 @@ export default function Navbar() {
 
         <div
           className={`absolute right-5 hidden max-lg:block
-              bg-blue-200 top-5 transition-all ${
+              bg-blue-200 top-5 transition-all  ${
                 menu
-                  ? "w-[90vw] h-[88vh] rounded-4xl"
-                  : "hover:w-[0vw] hover:h-[0vw] right-0 bg-white rounded-4xl"
+                  ? "w-[90vw] h-[88vh] rounded-3xl"
+                  : "hover:w-[0vw] hover:h-[0vw] right-0 bg-black rounded-3xl"
               }`}
         >
           <div className="w-full h-full flex justify-end items-start">
