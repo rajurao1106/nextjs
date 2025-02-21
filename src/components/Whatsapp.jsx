@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import whatsapp from "../assets/images/components/whatsapp.png";
+import whatsapp from "../images/components/whatsapp.png";
 
 export default function Whatsapp() {
   return (

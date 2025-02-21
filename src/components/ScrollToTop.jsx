@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import scroll from "../assets/images/components/home.png";
 import { FaArrowUp } from "react-icons/fa6";
 
 export default function ScrollToTop() {

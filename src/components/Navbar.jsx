@@ -1,6 +1,5 @@
-"use client";
-import React, { useState } from "react";
-
+"use client";import React, { useState } from "react";
+import Link from "next/link";
 import { AiOutlineHome } from "react-icons/ai";
 import { IoInformationCircleOutline } from "react-icons/io5";
 import { MdOutlineMiscellaneousServices } from "react-icons/md";
@@ -40,7 +39,7 @@ export default function Navbar() {
           Pracharkar{" "}
           <p className="max-lg:text-sm text-lg text-gray-500">Solutions</p>
         </h1>
-        <ul className="flex gap-20 px-2 bg-white shadow-md rounded-md max-lg:hidden">
+        <ul className="flex gap-12 px-2 bg-white z-1000 shadow-md rounded-md max-lg:hidden">
           {menuItems.map((menu, index) => (
             <li
               key={index}
@@ -51,29 +50,29 @@ export default function Navbar() {
                   : "border-b-2 border-white"
               }`}
             >
-              <div
-                to={menu.link}
+              <Link
+                href={menu.link}
                 className="flex items-center gap-2 px-3 py-4  cursor-pointer transition-all"
               >
                 {menu.icon} {menu.name}
-              </div>
+              </Link>
             </li>
           ))}
         </ul>
-        <div
-          to={"/contact"}
+        <Link
+          href={"/contact"}
           className="bg-red-500 max-lg:hidden max-lg:text-sm text-white p-4 rounded-xl flex justify-center items-center gap-2 shadow-md "
         >
-          <IoCallOutline />
-          Contact Us
-        </div>
+          {/* <IoCallOutline /> */}
+          Get Free Consultant
+        </Link>
 
         <div
           className={`absolute right-5 hidden max-lg:block
               bg-blue-200 top-5 transition-all ${
                 menu
                   ? "w-[90vw] h-[88vh] rounded-4xl"
-                  : "hover:w-[0vw] hover:h-[0vw] right-0 bg-white"
+                  : "hover:w-[0vw] hover:h-[0vw] right-0 bg-white rounded-4xl"
               }`}
         >
           <div className="w-full h-full flex justify-end items-start">
