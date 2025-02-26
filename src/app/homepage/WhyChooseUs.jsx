@@ -47,53 +47,53 @@ export default function WhyChooseUs() {
   return (
     <div className="w-full py-20 bg-gray-50">
       <div className="w-full max-w-[1100px] mx-auto px-4 flex flex-col justify-between items-center gap-12">
-      <div className="space-y-4 text-center flex flex-col justify-center items-center">
-            <p className="font-[Quicksand] font-bold text-lg text-red-500 text-center">
-              What We Offer
-            </p>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-center md:text-left font-[Quicksand] mb-3">
-              Our Creative Services
-            </h1>
-            <p className="font-[Quicksand] font-bold text-lg w-[80%] max-lg:w-full max-lg:text-sm text-center text-gray-500">
-              Get the most of reduction in your team’s operating costs for the
-              whole product which creates amazing UI/UX experiences.
-            </p>
-          </div>
+        <div className="space-y-4 text-center flex flex-col justify-center items-center">
+          <p className="font-[Quicksand] font-bold text-lg text-red-500 text-center">
+            Why Choose Us
+          </p>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-center md:text-left font-[Quicksand] mb-3">
+            Our Creative Services
+          </h1>
+          <p className="font-[Quicksand] font-bold text-lg w-[80%] max-lg:w-full max-lg:text-sm text-center text-gray-500">
+            Get the most of reduction in your team’s operating costs for the
+            whole product which creates amazing UI/UX experiences.
+          </p>
+        </div>
         <div className="flex gap-10 max-lg:flex-col-reverse">
-        <div className="flex-1 flex-col justify-center items-center space-y-12">
-          
-          <div className="space-y-8">
-            {features.map((feature) => (
-              <div
-                key={feature.id}
-                className={`flex group z-10 relative gap-4 items-start cursor-pointer shadow-md hover:shadow-lg overflow-hidden rounded-lg border-l-3 ${feature.border}`}
-                onClick={() => setSelectedImage(feature.image)}
-              >
+          <div className="flex-1 flex-col justify-center items-center space-y-12">
+            <div className="space-y-8 ">
+              {features.map((feature) => (
                 <div
-                  className={`absolute w-full h-full right-[100%] transition-all group-hover:right-0 ${feature.background}`}
-                ></div>
-                <div className={`p-3 m-3 ${feature.bgColor} rounded-lg z-10`}>
-                  {feature.icon}
+                  key={feature.id}
+                  className={`flex group relative gap-4 items-start cursor-pointer
+                   shadow-md hover:shadow-lg overflow-hidden rounded-lg border-l-4 ${feature.border}`}
+                  onClick={() => setSelectedImage(feature.image)}
+                >
+                  <div
+                    className={`absolute w-full h-full right-[100%] transition-all group-hover:right-0  ${feature.background}`}
+                  ></div>
+                  <div className={`p-3 m-3 ${feature.bgColor} rounded-lg z-0`}>
+                    {feature.icon}
+                  </div>
+                  <div className="space-y-2 m-3  z-0">
+                    <h2 className="text-xl font-semibold text-gray-900 group-hover:text-black transition-all duration-300">
+                      {feature.title}
+                    </h2>
+                    <p className="text-gray-600 leading-relaxed group-hover:text-white transition-all duration-300">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="space-y-2 z-10 m-3  ">
-                  <h2 className="text-xl font-semibold text-gray-900 group-hover:text-black transition-all duration-300">
-                    {feature.title}
-                  </h2>
-                  <p className="text-gray-600 leading-relaxed group-hover:text-white transition-all duration-300">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="flex-1">
-          <img
-            src={selectedImage}
-            alt="Feature representation"
-            className="w-full h-auto rounded-lg shadow-xl transition-all duration-300"
-          />
-        </div>
+          <div className="flex-1">
+            <img
+              src={selectedImage}
+              alt="Feature representation"
+              className="w-full h-auto rounded-lg shadow-xl transition-all duration-300"
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -102,7 +103,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="text-center mt-10  text-sm opacity-80 border-t border-white py-4">
-        © {new Date().getFullYear()} Pracharkar Solutions. All rights reserved.
+        © {new Date().getFullYear()} <Link href={'https://www.pracharkarsolutions.com'}>Pracharkar Solutions.</Link> All rights reserved.
       </div>
     </footer>
   );

@@ -28,19 +28,21 @@ export default function AboutUs() {
     },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeSection, setActiveSection] = useState(0);
   const sectionRefs = useRef([]);
 
   useEffect(() => {
     const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight * 1.3;
+
       sectionRefs.current.forEach((ref, index) => {
         if (ref) {
-          const rect = ref.getBoundingClientRect();
+          const { offsetTop, offsetHeight } = ref;
           if (
-            rect.top < window.innerHeight * 0.8 &&
-            rect.bottom > window.innerHeight * 0.2
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
           ) {
-            setActiveIndex(index);
+            setActiveSection(index);
           }
         }
       });
@@ -51,9 +53,9 @@ export default function AboutUs() {
   }, []);
 
   return (
-    <div className="text-gray-900 flex flex-col items-center px-6 py-12 min-h-[150vh] overflow-visible">
-      {/* Sticky Image & Content */}
-      <div className="sticky top-18 max-lg:top-12 w-full max-w-5xl p-6 max-lg:p-3 shadow-lg rounded-2xl bg-white flex flex-col items-center justify-center gap-0 z-10">
+    <div className="text-gray-900 flex flex-col items-center px-6 py-12 min-h-[150vh]">
+      {/* ✅ Fixed Sticky Section */}
+      <div className="sticky top-16 w-full max-w-5xl p-6 shadow-lg rounded-2xl flex flex-col items-center justify-center bg-white">
         <p className="font-[Quicksand] font-bold text-lg text-red-500">
           What We Offer
         </p>
@@ -64,25 +66,25 @@ export default function AboutUs() {
           Get the most of reduction in your team’s operating costs for the whole
           product which creates amazing UI/UX experiences.
         </p>
-        <div className="flex flex-col md:flex-row items-center gap-4 w-full">
+        <div className="flex flex-col md:flex-row items-center gap-4 w-full mt-6">
           <AnimatePresence mode="wait">
             <motion.img
-              key={sections[activeIndex].title}
-              src={sections[activeIndex].image}
-              alt={sections[activeIndex].title}
+              key={activeSection}
+              src={sections[activeSection].image}
+              alt={sections[activeSection].title}
               className="w-64 h-64 md:w-96 md:h-96 object-cover rounded-xl"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
             />
           </AnimatePresence>
           <div className="text-center md:text-left">
             <h2 className="text-3xl font-bold text-blue-700 font-[Quicksand]">
-              {sections[activeIndex].title}
+              {sections[activeSection].title}
             </h2>
             <p className="text-lg max-lg:text-base text-gray-800 mt-4 leading-relaxed">
-              {sections[activeIndex].content}
+              {sections[activeSection].content}
             </p>
           </div>
         </div>
@@ -96,7 +98,7 @@ export default function AboutUs() {
             ref={(el) => (sectionRefs.current[index] = el)}
             className="h-[60vh] max-lg:h-[40vh] flex items-center justify-center w-full"
           >
-            <span className="text-gray-500 text-lg">{section.title}</span>
+            <span className="text-gray-500 text-lg opacity-0">{section.title}</span>
           </div>
         ))}
       </div>
