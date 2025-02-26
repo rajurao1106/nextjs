@@ -9,7 +9,7 @@ import ConnectWithUs from "@/components/ConnectWithUs";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import { ThemeProvider } from "../components/theme-context";
 
-const isUnderConstruction = false; 
+const isUnderConstruction = true; 
 
 export default function RootLayout({ children }) {
   return (

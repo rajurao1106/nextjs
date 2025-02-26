@@ -6,8 +6,8 @@ export default function NetworkingSection() {
     <section className="py-16 px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto flex max-lg:flex-col-reverse flex-col lg:flex-row items-center gap-12">
         {/* Left Content */}
-        <div className="lg:w-1/2 text-center lg:text-left">
-          <h2 className="text-4xl font-bold mb-4 text-gray-900">
+        <div className="lg:w-3/4 text-center lg:text-left">
+          <h2 className="text-5xl font-bold mb-4 text-gray-900">
             Make a better future with your {" "}
             <span className="text-blue-500">Networking</span>
           </h2>
