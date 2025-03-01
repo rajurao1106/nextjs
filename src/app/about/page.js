@@ -21,7 +21,7 @@ export default function About() {
           theme
             ? "from-gray-900 via-gray-700 to-black"
             : "from-orange-200 via-white to-pink-200"
-        } pt-[8rem] hover:pt-[5rem] pb-[5rem] text-center`}
+        } pt-[8rem] max-lg:pt-[5rem] pb-[5rem] text-center`}
       >
         {/* Decorative Elements */}
         <h1 className="text-4xl font-bold font-[Quicksand]">About Us</h1>
