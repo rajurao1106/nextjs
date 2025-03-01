@@ -39,12 +39,12 @@ export default function Navbar() {
     >
       <div className="w-full max-w-[1250px] max-lg:w-[90%] flex justify-between items-center font-medium">
         {/* LOGO */}
-        <h1 className="text-4xl flex flex-col max-lg:text-lg text-blue-500 font-black font-[Quicksand] text-center">
+        <Link href={'/'} className="text-4xl flex flex-col max-lg:text-lg text-blue-500 font-black font-[Quicksand] text-center">
           Pracharkar{" "}
           <span className="max-lg:text-sm text-lg text-gray-500">
             Solutions
           </span>
-        </h1>
+        </Link>
 
         {/* DESKTOP MENU */}
         <ul className={`flex transition-colors ${theme ? "bg-gray-900 border-t" : "bg-white"} gap-12 px-2 shadow-md rounded-md max-lg:hidden`}>
