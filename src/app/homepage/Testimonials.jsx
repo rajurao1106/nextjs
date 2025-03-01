@@ -16,7 +16,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className="w-full py-16 bg-blue-950 flex flex-col items-center text-white">
+    <div className="w-full py-16 bg-gray-900 flex flex-col items-center text-white">
       <h2 className="text-4xl max-lg:w-[70%] font-bold text-center mb-10 tracking-wide">
         What Our Clients Say
       </h2>

@@ -1,22 +1,30 @@
-import React from 'react'
-import Portfolio from './Portfolio'
+"use client";
 
-export default function page() {
+import React from "react";
+import Portfolio from "./Portfolio";
+import { useTheme } from "../../components/theme-context";
+
+export default function Page() {
+  const { theme } = useTheme();
+
   return (
-    <div>
-         <div className="relative bg-gradient-to-r pt-[8rem] from-green-200 via-red-100 to-indigo-100 pb-[5rem] text-center">
-      {/* Decorative Elements */}
-      
+    <div className={theme ? "bg-gray-900 text-white" : "bg-white text-gray-900"}>
+      <div
+        className={`relative bg-gradient-to-r ${
+          theme ? "from-gray-900 via-gray-700 to-black" : "from-orange-200 via-white to-pink-200"
+        } pt-[8rem] pb-[5rem] text-center`}
+      >
+        {/* Decorative Elements */}
+        <h1 className="text-4xl font-bold font-[Quicksand]">Portfolio</h1>
+        <nav className="mt-3 font-[Quicksand]">
+          <a href="/" className="hover:underline">
+            Home
+          </a>{" "}
+          &gt; <span>Portfolio</span>
+        </nav>
+      </div>
 
-      <h1 className="text-4xl font-bold text-gray-900 font-[Quicksand]">Portfolio</h1>
-      <nav className="mt-3 text-gray-600 font-[Quicksand]">
-        <a href="/" className="hover:text-gray-900">
-          Home
-        </a>{" "}
-        &gt; <span className="text-gray-900">Portfolio</span>
-      </nav>
+      <Portfolio />
     </div>
-<Portfolio/>
-    </div>
-  )
+  );
 }

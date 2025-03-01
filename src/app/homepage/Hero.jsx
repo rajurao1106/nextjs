@@ -51,16 +51,20 @@ export default function HeroSection() {
       className={`relative flex flex-col transition-colors ${
         theme ? "bg-gray-900" : "bg-white"
       } items-center 
-       text-center px-6 md:px-20 pt-28  overflow-hidden`}
+       text-center px-6 max-lg:px-0 md:px-20 pt-24 max-lg:pt-28  overflow-hidden`}
     >
       {" "}
-      <Image src={bg_image2} alt="Background" className="absolute max-lg:hidden w-full" />
+      <Image
+        src={bg_image2}
+        alt="Background"
+        className="absolute max-lg:hidden w-full"
+      />
       {/* Background Image */}
       <div className="relative w-full max-w-[1200px] flex flex-col items-center ">
         <Image
           src={bg_image}
           alt="Background"
-          className="max-lg:w-screen  max-lg:h-[80vh]"
+          className="max-lg:w-screen  max-lg:h-[74vh]"
         />
         <Image
           src={outdoor_icon}
@@ -92,41 +96,49 @@ export default function HeroSection() {
           alt="Background"
           className="absolute max-lg:hidden top-[35%] right-0 shadow-xl"
         />
-        <div className="absolute top-0 max-lg:-top-10 ">
+        <div className="absolute top-0 max-lg:-top-[3.5rem] z-0 w-full flex justify-center items-center flex-col">
           <h1
-            className={`text-5xl max-lg:text-[1.7rem] bg-gradient-to-r from-yellow-400 via-yellow-300 
-            to-white bg-clip-text text-transparent text-white font-extrabold mt-24 font-[Exo 2]`}
+            className={`text-6xl w-[60%] max-lg:text-[1.8rem] bg-gradient-to-r from-yellow-400 via-yellow-300 
+            to-white bg-clip-text text-transparent text-white font-extrabold mt-24 mb-12 font-[Exo 2]`}
           >
-            UNLOCK YOUR POTENTIAL
+            EXPERIENCE THE FUTURE OF BRANDING
           </h1>
-          <p className="text-lg text-white max-lg:text-gray-300 mt-4 w-[50%] max-lg:w-[90%] mx-auto">
-            Embark on a transformative journey with Sync where every course is a
-            key to unlocking your boundless potential. Choose your passion,
-            embrace leaming, and let your creativity flourish!
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.2 }}
-              className="mt-14 flex gap-10 max-lg:flex-col w-full justify-center items-center"
-            >
-              {" "}
-              <button
-                className="hover:text-[#0183F0]
-            border duration-200 hover:border-[#0183F0] border-white px-6 max-lg:px-3 
-            max-lg:w-[60%] py-3 rounded-2xl text-lg"
-              >
-                Get a Consultation
-              </button>
-              <button
-                className="bg-white
-                hover:bg-[#0153DA] text-blue-800 hover:text-white duration-200 px-6 
-               border max-lg:px-3 max-lg:w-[60%] py-3 rounded-2xl text-lg"
-              >
-                Explore Services
-              </button>
-            </motion.div>
+          <p className="text-lg drop-shadow-[0_0_0.5px_black] text-white mt-4 w-[50%] max-lg:w-[90%] mx-auto">
+            Experience the future of branding with innovative strategies,
+            immersive creativity, and cutting-edge technology. We transform
+            ideas into impactful brand stories, redefining engagement and
+            setting new standards for the digital era.
           </p>
-          <div className="absolute top-[180%] w-full flex flex-col items-center text-center px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="mt-10 flex gap-6 max-lg:flex-col text-white w-full justify-center items-center"
+          >
+            <button
+              className="relative group px-6 py-3 text-lg font-semibold 
+               border-2 border-white max-lg:border-gray-100 rounded-2xl overflow-hidden 
+               transition-all duration-300 max-lg:w-[60%] max-lg:px-3"
+            >
+              <span className="absolute inset-0 bg-[#0183F0] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              <span className="relative z-10 text-white">
+                Get a Consultation
+              </span>
+            </button>
+
+            <button
+              className="relative group px-6 py-3 text-lg font-semibold 
+               bg-white hover:bg-[#0183F0] text-blue-800 border border-transparent 
+               rounded-2xl transition-all duration-300 max-lg:w-[60%] max-lg:px-3"
+            >
+              
+              <span className="relative z-10 transition-all group-hover:text-white">
+                Explore Services
+              </span>
+            </button>
+          </motion.div>
+
+          <div className="absolute top-[140%] w-full flex flex-col items-center text-center px-6">
             <h1 className="text-5xl font-extrabold text-white mt-28 drop-shadow-[0_0_15px_#0183F0]">
               OUR SERVICES
             </h1>

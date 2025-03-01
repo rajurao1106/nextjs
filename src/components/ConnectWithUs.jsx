@@ -3,10 +3,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTheme } from "./theme-context";
 
 const ConnectWithUs = () => {
+  const { theme } = useTheme();
   return (
-    <div className="flex flex-col items-center justify-center text-center py-16 px-4">
+    <div className={`flex flex-col items-center justify-center text-center py-16 px-4 ${theme?"text-white":"text-black"}`}>
       {/* Badge */}
       <motion.span
         className="px-4 py-1 mb-3 text-sm font-semibold text-[#ff7b7b] bg-gradient-to-r from-pink-200 to-orange-200 rounded-full shadow-md"
@@ -18,7 +20,7 @@ const ConnectWithUs = () => {
       </motion.span>
 
       {/* Title */}
-      <h2 className="text-3xl font-bold text-gray-800 md:text-4xl">
+      <h2 className="text-3xl font-bold md:text-4xl">
         Let’s Work Together
       </h2>
 

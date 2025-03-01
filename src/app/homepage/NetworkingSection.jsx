@@ -1,21 +1,32 @@
+"use client";
 import laptop from "../../images/homepage/laptop.gif";
 import Image from "next/image";
+import { useTheme } from "../../components/theme-context";
 
 export default function NetworkingSection() {
+  const { theme } = useTheme();
   return (
-    <section className="py-16 px-6 bg-gray-50">
+    <section
+      className={`py-16 px-6 transition-colors ${
+        theme ? " bg-gray-900 text-white" : "bg-white"
+      }`}
+    >
       <div className="max-w-6xl mx-auto flex max-lg:flex-col-reverse flex-col lg:flex-row items-center gap-12">
         {/* Left Content */}
         <div className="lg:w-3/4 text-center lg:text-left">
-          <h2 className="text-5xl font-bold mb-4 text-gray-900">
-            Make a better future with your {" "}
+          <h2
+            className={`text-5xl max-lg:text-4xl font-bold mb-4 text-gray-900 ${
+              theme ? " text-white" : "text-black"
+            }`}
+          >
+            Make a better future with Our{" "}
             <span className="text-blue-500">Networking</span>
           </h2>
-          <p className="text-gray-700 mb-6 leading-relaxed">
-            Impress everyone you meet with the smartest, quickest, and most
-            innovative way to share contact details, social media links, and so
-            much more. Build lasting connections effortlessly and leave a mark
-            that sets you apart!
+          <p className=" mb-6 leading-relaxed text-xl">
+            Unlock limitless possibilities with our networking expertise.
+            Building a smarter, more connected future with seamless
+            communication, innovation, and technology-driven solutions for
+            growth and success.
           </p>
           <button className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-full shadow-md hover:bg-blue-600 transition">
             Learn More

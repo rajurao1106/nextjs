@@ -4,9 +4,11 @@ import { useEffect, useState, useRef } from "react";
 import promise from "../../images/homepage/promise.png";
 import ad_campaign from "../../images/homepage/ad-campaign.jpg";
 import vision from "../../images/homepage/vision.jpg";
+import { useTheme } from "../../components/theme-context";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function AboutUs() {
+  const { theme } = useTheme();
   const sections = [
     {
       title: "Digital Marketing",
@@ -53,19 +55,25 @@ export default function AboutUs() {
   }, []);
 
   return (
-    <div className="text-gray-900 flex flex-col items-center px-6 py-12 min-h-[150vh]">
+    <div
+      className={`text-gray-900 flex z-0 flex-col items-center px-6 py-12 min-h-[150vh] transition-colors
+      ${theme ? " bg-gray-900 text-white" : ""}`}
+    >
       {/* ✅ Fixed Sticky Section */}
-      <div className="sticky top-16 w-full max-w-5xl p-6 shadow-lg rounded-2xl flex flex-col items-center justify-center bg-white">
+      <div
+        className={`sticky top-16 w-full max-w-5xl p-6 shadow-lg rounded-2xl flex flex-col transition-colors
+          ${theme ? " bg-gray-800 text-white" : "bg-white"} items-center justify-center`}
+      >
         <p className="font-[Quicksand] font-bold text-lg text-red-500">
           What We Offer
         </p>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-center md:text-left font-[Quicksand] mb-3">
-          Our Creative Services
+        <h1 className="text-4xl max-lg:text-2xl font-extrabold text-center md:text-left font-[Quicksand]">
+          Why We’re Your Perfect Partner
         </h1>
-        <p className="font-[Quicksand] font-bold text-lg w-[80%] max-lg:w-full max-lg:text-sm text-center text-gray-500">
-          Get the most of reduction in your team’s operating costs for the whole
-          product which creates amazing UI/UX experiences.
-        </p>
+        {/* <p className="font-[Quicksand] font-bold text-lg w-[80%] max-lg:w-full max-lg:text-sm text-center text-gray-500">
+          Unlock innovation with our creative services—branding, design, and
+          strategy that bring your vision to life and elevate your brand.
+        </p> */}
         <div className="flex flex-col md:flex-row items-center gap-4 w-full mt-6">
           <AnimatePresence mode="wait">
             <motion.img
@@ -83,7 +91,10 @@ export default function AboutUs() {
             <h2 className="text-3xl font-bold text-blue-700 font-[Quicksand]">
               {sections[activeSection].title}
             </h2>
-            <p className="text-lg max-lg:text-base text-gray-800 mt-4 leading-relaxed">
+            <p className={`text-lg max-lg:text-base text-gray-800 mt-4 leading-relaxed
+              ${
+                theme ? " text-white" : "text-black"
+              }`}>
               {sections[activeSection].content}
             </p>
           </div>
@@ -98,7 +109,9 @@ export default function AboutUs() {
             ref={(el) => (sectionRefs.current[index] = el)}
             className="h-[60vh] max-lg:h-[40vh] flex items-center justify-center w-full"
           >
-            <span className="text-gray-500 text-lg opacity-0">{section.title}</span>
+            <span className="text-gray-500 text-lg opacity-0">
+              {section.title}
+            </span>
           </div>
         ))}
       </div>

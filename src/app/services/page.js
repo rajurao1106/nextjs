@@ -1,23 +1,29 @@
-"use client"
-import React from 'react'
-import Services from './Services'
+"use client";
+import React from "react";
+import Services from "./Services";
+import { useTheme } from "../../components/theme-context";
 
 export default function page() {
+  const { theme } = useTheme();
   return (
     <div>
-      <div className="relative bg-gradient-to-r pt-[8rem] from-green-200 via-red-100 to-indigo-100 pb-[5rem] text-center">
-      {/* Decorative Elements */}
-      
-
-      <h1 className="text-4xl font-bold text-gray-900 font-[Quicksand]">Services</h1>
-      <nav className="mt-3 text-gray-600 font-[Quicksand]">
-        <a href="/" className="hover:text-gray-900">
-          Home
-        </a>{" "}
-        &gt; <span className="text-gray-900">Services</span>
-      </nav>
+      <div
+        className={`relative bg-gradient-to-r ${
+          theme
+            ? "from-gray-900 via-gray-700 to-black"
+            : "from-orange-200 via-white to-pink-200"
+        } pt-[8rem] pb-[5rem] text-center`}
+      >
+        {/* Decorative Elements */}
+        <h1 className="text-4xl font-bold font-[Quicksand]">Services</h1>
+        <nav className="mt-3 font-[Quicksand]">
+          <a href="/" className="hover:underline">
+            Home
+          </a>{" "}
+          &gt; <span>Services</span>
+        </nav>
+      </div>
+      <Services />
     </div>
-    <Services/>
-    </div>
-  )
+  );
 }

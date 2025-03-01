@@ -37,7 +37,7 @@ export default function Navbar() {
      
       transition-all`}
     >
-      <div className="w-full max-w-[1250px] flex justify-between items-center font-medium max-lg:max-w-[350px]">
+      <div className="w-full max-w-[1250px] max-lg:w-[90%] flex justify-between items-center font-medium">
         {/* LOGO */}
         <h1 className="text-4xl flex flex-col max-lg:text-lg text-blue-500 font-black font-[Quicksand] text-center">
           Pracharkar{" "}
@@ -47,7 +47,7 @@ export default function Navbar() {
         </h1>
 
         {/* DESKTOP MENU */}
-        <ul className={`flex transition-colors ${theme ? "bg-gray-900 text-white border-t" : "bg-white text-black "} gap-12 px-2 shadow-md rounded-md max-lg:hidden`}>
+        <ul className={`flex transition-colors ${theme ? "bg-gray-900 border-t" : "bg-white"} gap-12 px-2 shadow-md rounded-md max-lg:hidden`}>
           {menuItems.map((menu, index) => (
             <li
               key={index}
@@ -152,18 +152,18 @@ export default function Navbar() {
         )}
 
         {/* MOBILE MENU */}
-        <div className={`absolute right-5 hidden max-lg:block transition-all
-           ${menu ? "w-[90vw] h-[88vh] rounded-3xl bg-blue-200 top-4" : "right-0 bg-black rounded-3xl"}`}>
+        <div className={`absolute right-5 hidden max-lg:block transition-colors 
+           ${menu ? "w-[90vw] h-[88vh] rounded-3xl  bg-blue-300  top-4 " : "right-0 rounded-3xl text-black"}`}>
           <div className="w-full h-full flex justify-end items-start">
             {menu ? (
               <div>
                 <div
                   onClick={handleMenu}
-                  className="text-2xl w-10 p-2 rounded shadow-md bg-blue-200"
+                  className="text-2xl w-10 p-2 rounded shadow-md bg-blue-300 text-black"
                 >
                   <AiOutlineClose />
                 </div>
-                <ul className="absolute w-full text-center text-3xl flex flex-col gap-8 left-0 transition-all">
+                <ul className="absolute w-full text-center text-3xl text-white flex flex-col gap-8 left-0 transition-all">
                   {menuItems.map((item, index) => (
                     <li key={index} onClick={() => setMenu(false)}>
                       <Link href={item.link}>{item.name}</Link>

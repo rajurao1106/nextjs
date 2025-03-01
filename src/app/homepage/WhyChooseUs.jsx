@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Zap, Target, DollarSign } from "lucide-react";
 import examining from "../../images/homepage/cost.jpg";
+import { useTheme } from "../../components/theme-context";
 
 const features = [
   {
@@ -42,10 +43,11 @@ const features = [
 ];
 
 export default function WhyChooseUs() {
+  const { theme } = useTheme();
   const [selectedImage, setSelectedImage] = useState(features[0].image);
 
   return (
-    <div className="w-full py-20 bg-gray-50">
+    <div className={`w-full py-20 bg-gray-50 transition-colors ${theme ? "bg-gray-900" : ""}`}>
       <div className="w-full max-w-[1100px] mx-auto px-4 flex flex-col justify-between items-center gap-12">
         <div className="space-y-4 text-center flex flex-col justify-center items-center">
           <p className="font-[Quicksand] font-bold text-lg text-red-500 text-center">
@@ -76,10 +78,12 @@ export default function WhyChooseUs() {
                     {feature.icon}
                   </div>
                   <div className="space-y-2 m-3  z-0">
-                    <h2 className="text-xl font-semibold text-gray-900 group-hover:text-black transition-all duration-300">
+                    <h2 className={`text-xl font-semibold text-gray-900 group-hover:text-black 
+                      transition-all duration-300 ${theme ? "text-white" : ""}`}>
                       {feature.title}
                     </h2>
-                    <p className="text-gray-600 leading-relaxed group-hover:text-white transition-all duration-300">
+                    <p className={`text-gray-600 leading-relaxed group-hover:text-white 
+                    transition-all duration-300 ${theme ? "text-gray-200" : ""}`}>
                       {feature.description}
                     </p>
                   </div>

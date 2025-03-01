@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 
+
 const CreativeAdvertising = () => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-12 gap-10">

@@ -1,24 +1,34 @@
+"use client";
+
 import { useState } from "react";
+import Image from "next/image";
+import { useTheme } from "../../components/theme-context";
+import service1 from "../../images/services/service1.jpg";
+import service2 from "../../images/services/service2.jpg";
+import service3 from "../../images/services/service3.jpg";
+import service4 from "../../images/services/service4.jpg";
+import service5 from "../../images/services/service5.jpg";
 
 const servicesData = [
-  { id: 1, category: "Digital Marketing", title: "Digital Marketing", image: "/digital-marketing.png" },
-  { id: 2, category: "Outdoor Campaigns", title: "Outdoor Campaign", image: "/outdoor-campaign.png" },
-  { id: 3, category: "Website & App Development", title: "Website & App Development", image: "/web-development.png" },
-  { id: 4, category: "Mobile Marketing", title: "Mobile Marketing", image: "/mobile-marketing.png" },
-  { id: 5, category: "Printing Solutions", title: "Printing Solutions", image: "/printing-solutions.png" },
+  { id: 1, category: "Digital Marketing", title: "Digital Marketing", image: service1 },
+  { id: 2, category: "Social Media Marketing", title: "Outdoor Campaign", image: service2 },
+  { id: 3, category: "Website & App Development", title: "Website & App Development", image: service3 },
+  { id: 4, category: "SEO/SEM", title: "Mobile Marketing", image: service4 },
+  { id: 5, category: "Creative Designs", title: "Printing Solutions", image: service5 },
 ];
 
 const categories = ["All", ...new Set(servicesData.map((service) => service.category))];
 
 export default function Services() {
+  const { theme } = useTheme();
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredServices =
     selectedCategory === "All" ? servicesData : servicesData.filter((service) => service.category === selectedCategory);
 
   return (
-    <section className="py-16 text-center">
-      <h3 className="text-purple-500 uppercase text-sm">Services</h3>
+    <section className={`${theme ? "bg-gray-900 text-white" : "bg-white text-gray-900"} py-16 text-center`}>
+      {/* <h3 className="text-purple-500 uppercase text-sm">Services</h3> */}
       <h2 className="text-3xl font-bold mt-2">What We Offer</h2>
 
       {/* Category Buttons */}
@@ -26,12 +36,14 @@ export default function Services() {
         {categories.map((category) => (
           <button
             key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+            className={`px-4 py-2 text-sm rounded-full transition ${
               selectedCategory === category
                 ? "bg-purple-600 text-white"
+                : theme
+                ? "bg-gray-700 text-white hover:bg-purple-500"
                 : "bg-gray-200 text-gray-800 hover:bg-purple-500 hover:text-white"
             }`}
+            onClick={() => setSelectedCategory(category)}
           >
             {category}
           </button>
@@ -41,8 +53,13 @@ export default function Services() {
       {/* Services Grid */}
       <div className="mt-8 flex flex-wrap justify-center items-center gap-6 px-6">
         {filteredServices.map((service) => (
-          <div key={service.id} className="p-4 w-[25rem] rounded-lg shadow-md bg-white hover:shadow-lg transition">
-            <img src={service.image} alt={service.title} className="w-full h-48 object-cover rounded-lg" />
+          <div
+            key={service.id}
+            className={`p-4 w-[25rem] rounded-lg shadow-md transition ${
+              theme ? "bg-gray-800 shadow-gray-700 hover:shadow-gray-600" : "bg-white hover:shadow-lg"
+            }`}
+          >
+            <Image src={service.image} alt={service.title} className="w-full h-48 object-cover rounded-lg" />
             <h3 className="mt-4 font-semibold text-lg">{service.title}</h3>
           </div>
         ))}
