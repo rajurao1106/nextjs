@@ -138,7 +138,7 @@ export default function HeroSection() {
             </button>
           </motion.div>
 
-          <div className="absolute top-[140%] w-full flex flex-col items-center text-center px-6">
+          <div className="absolute top-[135%] w-full flex flex-col items-center text-center px-6">
             <h1 className="text-5xl font-extrabold text-white mt-28 drop-shadow-[0_0_15px_#0183F0]">
               OUR SERVICES
             </h1>
