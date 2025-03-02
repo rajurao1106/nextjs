@@ -51,7 +51,7 @@ export default function WhoWeAre() {
       </div>
 
       {/* Growth Story Section */}
-      <div className="max-w-6xl mx-auto flex flex-col-reverse max-lg:flex-col md:flex-row items-center gap-12">
+      <div className="max-w-6xl mx-auto flex flex-row-reverse max-lg:flex-col items-center gap-12">
         <motion.div
           className="w-full md:w-1/2"
           initial={{ opacity: 0, x: -50 }}
