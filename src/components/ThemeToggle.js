@@ -11,7 +11,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative w-12 max-lg:relative max-lg:right-[8.5rem] h-12 flex justify-center items-center rounded-full border-1 border-gray-300 dark:border-gray-700
+      className="relative w-12 max-lg:relative max-lg:right-[8.5rem] h-12 flex justify-center items-center rounded-full
                  transition-all duration-300 "
       aria-label="Toggle Theme"
     >
@@ -22,7 +22,7 @@ export default function ThemeToggle() {
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
         {theme ? (
-          <image className="flex text-2xl justify-center items-center text-gray-300">🌙</image>
+          <image className="flex text-2xl justify-center items-center text-gray-300 drop-shadow-[0_0_2px_white]">🌙</image>
         ) : (
           <Image src={sun} className="" width={500} height={500}/>
         )}
