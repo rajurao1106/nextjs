@@ -23,7 +23,7 @@ const portfolioItems = [
   },
   {
     id: 3,
-    title: "Outdoor Advertising",
+    title: "Designing Services",
     category: "Advertising",
     image: "/portfolio3.jpg",
     description: "High-impact billboard campaign for urban areas.",

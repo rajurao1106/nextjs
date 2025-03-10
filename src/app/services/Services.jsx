@@ -10,11 +10,11 @@ import service4 from "../../images/services/service4.jpg";
 import service5 from "../../images/services/service5.jpg";
 
 const servicesData = [
-  { id: 1, category: "Digital Marketing", title: "Digital Marketing", image: service1 },
-  { id: 2, category: "Social Media Marketing", title: "Outdoor Campaign", image: service2 },
-  { id: 3, category: "Website & App Development", title: "Website & App Development", image: service3 },
-  { id: 4, category: "SEO/SEM", title: "Mobile Marketing", image: service4 },
-  { id: 5, category: "Creative Designs", title: "Printing Solutions", image: service5 },
+  { id: 1, category: "Digital Marketing", title: "Digital Marketing", image: service3 },
+  { id: 2, category: "Social Media Marketing", title: "Social Media Marketing", image: service2 },
+  { id: 3, category: "Website & App Development", title: "Website & App Development", image: service1 },
+  { id: 4, category: "SEO/SEM", title: "SEO/SEM", image: service4 },
+  { id: 5, category: "Creative Designs", title: "UI/UX Designing", image: service5 },
 ];
 
 const categories = ["All", ...new Set(servicesData.map((service) => service.category))];
