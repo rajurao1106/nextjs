@@ -12,7 +12,7 @@ export default function page() {
           theme
             ? "from-gray-900 via-gray-700 to-black"
             : "from-orange-200 via-white to-pink-200"
-        } pt-[8rem]max-lg:pt-[6rem] pb-[4rem] text-center`}
+        } pt-[8rem] max-lg:pt-[6rem] pb-[4rem] text-center`}
       >
         {/* Decorative Elements */}
         <h1 className="text-4xl font-bold font-[Quicksand]">Services</h1>

@@ -15,7 +15,7 @@ const ContactUs = () => {
             {
               icon: <FaMapMarkerAlt className="text-green-600 text-xl" />,
               title: "Our Locations",
-              text: "Shankar Nagar, Raipur, Chhattisgarh",
+              text: "Shivanand Nagar sector-1, Khamtari, Raipur, Chhattisgarh",
               bgHover: "hover:bg-green-400",
             },
             {

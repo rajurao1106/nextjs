@@ -17,7 +17,7 @@ import frame6 from "../../images/homepage/frame6.png";
 import frame7 from "../../images/homepage/frame7.png";
 import frame8 from "../../images/homepage/frame8.png";
 import homapage1 from "../../images/homepage/homapage1.png";
-
+import Link from "next/link";
 
 export default function HeroSection() {
   const { theme } = useTheme();
@@ -51,7 +51,7 @@ export default function HeroSection() {
   return (
     <div
       className={`relative flex flex-col transition-colors ${
-        theme ? "bg-gray-900" : "bg-white"
+        theme ? "bg-gray-900" : "bg-gray-100"
       } items-center 
        text-center px-6 max-lg:px-0 md:px-20 pt-24 max-lg:pt-28  overflow-hidden`}
     >
@@ -106,15 +106,26 @@ export default function HeroSection() {
         <div className="absolute top-0 max-lg:-top-[3.5rem] z-0 w-full flex justify-center items-center flex-col">
           <h1
             className={`text-6xl w-[60%] max-lg:text-[1.8rem] bg-gradient-to-r from-yellow-400 via-yellow-300 
-            to-white bg-clip-text text-transparent text-white font-extrabold mt-24 max-lg:mt-20 mb-12 max-lg:mb-[18rem] font-[Exo 2]`}
+            to-white bg-clip-text text-transparent text-white font-extrabold mt-24 max-lg:mt-20 mb-12 max-lg:mb-[16rem] font-[Exo 2]`}
           >
             EXPERIENCE THE FUTURE OF BRANDING
           </h1>
-          <div
-            
-            className="mt-10 flex gap-6 max-lg:flex-col text-white w-full justify-center items-center"
-          >
-            <button
+          <div className="mt-10 flex gap-6 max-lg:flex-col w-full justify-center items-center">
+            <Link
+              href={"/services"}
+              className="relative group px-6 py-3 text-lg font-semibold 
+             bg-gradient-to-r from-blue-500 to-blue-700 
+             hover:from-white hover:to-white hover:text-black 
+             text-white border-2 border-white 
+             rounded-2xl max-lg:w-[60%] max-lg:px-3"
+            >
+              <span className="relative z-10 transition-all">
+                Explore Services
+              </span>
+            </Link>
+
+            <Link
+              href={"/contact"}
               className="relative group px-6 py-3 text-lg font-semibold 
                border-2 border-white max-lg:border-gray-100 rounded-2xl overflow-hidden 
                transition-all duration-300 max-lg:w-[60%] max-lg:px-3"
@@ -123,26 +134,14 @@ export default function HeroSection() {
               <span className="relative z-10 text-white">
                 Get a Consultation
               </span>
-            </button>
-
-            <button
-              className="relative group px-6 py-3 text-lg font-semibold 
-               bg-white hover:bg-[#0183F0] text-blue-800 border border-transparent 
-               rounded-2xl transition-all duration-300 max-lg:w-[60%] max-lg:px-3"
-            >
-              
-              <span className="relative z-10 transition-all group-hover:text-white">
-                Explore Services
-              </span>
-            </button>
+            </Link>
           </div>
-          <p className="text-lg max-lg:text-base drop-shadow-[0_0_0.5px_black] text-white mt-4 w-[50%] max-lg:w-[90%] mx-auto">
+          {/* <p className="text-lg drop-shadow-[0_0_0.5px_black] text-white mt-4 w-[50%] max-lg:w-[90%] mx-auto">
             Experience the future of branding with innovative strategies,
             immersive creativity, and cutting-edge technology. We transform
             ideas into impactful brand stories, redefining engagement and
             setting new standards for the digital era.
-          </p>
-          
+          </p> */}
 
           <div className="absolute top-[135%] w-full flex flex-col items-center text-center px-6">
             <h1 className="text-5xl font-extrabold text-white mt-28 drop-shadow-[0_0_15px_#0183F0]">
