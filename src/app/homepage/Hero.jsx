@@ -71,7 +71,7 @@ export default function HeroSection() {
         <Image
           src={homapage1}
           alt="Background"
-          className="max-lg:w-[100vw]  max-lg:h-[90vh] object-cover"
+          className="max-lg:w-[100vw] hidden max-lg:block max-lg:h-[90vh] object-cover"
         />
         <Image
           src={outdoor_icon}

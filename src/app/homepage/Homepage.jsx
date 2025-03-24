@@ -6,6 +6,7 @@ import WhoWeAre from "./WhoWeAre";
 import FAQSection from "./FAQSection";
 import NetworkingSection from "./NetworkingSection";
 import Testimonials from "./Testimonials";
+import Whatsapp from "@/components/Whatsapp";
 
 export default function Homepage() {
   return (
@@ -17,6 +18,7 @@ export default function Homepage() {
       <WhyChooseUs />
       <Testimonials/>
       <FAQSection />
+      <Whatsapp/>
     </div>
   );
 }
