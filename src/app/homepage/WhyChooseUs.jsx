@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import { Zap, Target, DollarSign } from "lucide-react";
 import examining from "../../images/homepage/cost.jpg";
 import { useTheme } from "../../components/theme-context";
+import cost_effective from '../../images/homepage/cost-effective.jpg'
+import fast_result from '../../images/homepage/fast-result.jpg'
+import Image from "next/image";
 
 const features = [
   {
@@ -92,7 +95,7 @@ export default function WhyChooseUs() {
             </div>
           </div>
           <div className="flex-1">
-            <img
+            <Image
               src={selectedImage}
               alt="Feature representation"
               className="w-full h-auto rounded-lg shadow-xl transition-all duration-300"
