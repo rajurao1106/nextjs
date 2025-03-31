@@ -9,6 +9,26 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const Footer = () => {
+
+const Footer = [
+  {
+    menu:"Home",  
+    link:"/"
+  }, 
+  {
+    menu:"Services", 
+    link:"/services" 
+  }, 
+  {
+    menu:"About",  
+    link:"/about"
+  }, 
+  {
+    menu:"Contact",    
+    link:"/contact"
+  },
+]
+
   return (
     <footer className="relative bg-blue-950 text-white pt-12 overflow-hidden ">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
@@ -36,15 +56,15 @@ const Footer = () => {
         >
           <h3 className="text-xl font-bold">Quick Links</h3>
           <ul className="mt-4 space-y-2">
-            {["Home", "Services", "About", "Contact"].map((item, index) => (
+            {Footer.map((item, index) => (
               <motion.li
                 key={index}
                 whileHover={{ x: 5, scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
-                <a href="#" className="hover:underline">
-                  {item}
-                </a>
+                <Link href={`${item.link}`} className="hover:underline">
+                  {item.menu}
+                </Link>
               </motion.li>
             ))}
           </ul>

@@ -15,12 +15,12 @@ export default function Page() {
         } pt-[8rem] max-lg:pt-[6rem] pb-[4rem] text-center`}
       >
         {/* Decorative Elements */}
-        <h1 className="text-4xl font-bold font-[Quicksand]">Portfolio</h1>
+        <h1 className="text-4xl font-bold font-[Quicksand]">Our Work</h1>
         <nav className="mt-3 font-[Quicksand]">
           <a href="/" className="hover:underline">
             Home
           </a>{" "}
-          &gt; <span>Portfolio</span>
+          &gt; <span>Our Work</span>
         </nav>
       </div>
 

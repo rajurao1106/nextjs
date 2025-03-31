@@ -27,7 +27,7 @@ export default function Navbar() {
       icon: <MdOutlineMiscellaneousServices />,
       link: "/services",
     },
-    { name: "Portfolio", icon: <LuBriefcaseBusiness />, link: "/portfolio" },
+    { name: "Our Work", icon: <LuBriefcaseBusiness />, link: "/portfolio" },
     { name: "Contact", icon: <IoCallOutline />, link: "/contact" },
   ];
 

@@ -114,8 +114,8 @@ export default function HeroSection() {
             <Link
               href={"/services"}
               className="relative group px-6 py-3 text-lg font-semibold 
-             bg-gradient-to-r from-blue-500 to-blue-700 
-             hover:from-white hover:to-white hover:text-black 
+             bg-[#0183F0] 
+             hover:bg-white hover:text-black 
              text-white border-2 border-white 
              rounded-2xl max-lg:w-[60%] max-lg:px-3"
             >
@@ -143,7 +143,7 @@ export default function HeroSection() {
             setting new standards for the digital era.
           </p> */}
 
-          <div className="absolute top-[135%] w-full flex flex-col items-center text-center px-6">
+          <div className="absolute top-[180%] w-full flex flex-col items-center text-center px-6">
             <h1 className="text-5xl font-extrabold text-white mt-28 drop-shadow-[0_0_15px_#0183F0]">
               OUR SERVICES
             </h1>
