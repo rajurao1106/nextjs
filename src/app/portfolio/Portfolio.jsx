@@ -5,8 +5,10 @@ import Image from "next/image";
 import image1 from "../../images/portfolio/image1.png";
 import image2 from "../../images/portfolio/image2.png";
 import image3 from "../../images/portfolio/image3.png";
+import { useTheme } from "../../components/theme-context";
 
 const WorkSection = () => {
+    const { theme } = useTheme(); 
   const projects = [
     {
       title: "Homepage for Talent Search",
@@ -38,7 +40,9 @@ const WorkSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-100 ">
+    <section className={`py-16 bg-gray-100 w-full transition-colors ${
+      theme ? "bg-gray-900" : ""
+    }`}>
       <div className="container mx-auto px-4 max-w-[1200px]">
         {/* Section Title */}
         {/* <h2 className="text-4xl font-bold text-center mb-12">Our Work</h2> */}
