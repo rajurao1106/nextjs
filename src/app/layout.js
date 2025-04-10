@@ -8,6 +8,7 @@ import "./globals.css";
 import ConnectWithUs from "@/components/ConnectWithUs";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import { ThemeProvider } from "../components/theme-context";
+import { Analytics } from "@vercel/analytics/react"
 
 const isUnderConstruction = false; 
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
           <ConnectWithUs />
           <Footer />
         </ThemeProvider>
+        <Analytics/>
       </body>
     </html>
   );

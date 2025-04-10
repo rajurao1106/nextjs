@@ -11,10 +11,83 @@ import { useTheme } from "./theme-context";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
-  const  {theme}  = useTheme(); 
+  const { theme } = useTheme();
   const [select, setSelect] = useState(0);
   const [menu, setMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+  const services = [
+    {
+      name: "Digital Marketing Services",
+      subServices: [
+        {
+          service: "Social Media Marketing",
+          link: "/services/social-media-marketing",
+        },
+        {
+          service: "SEO/SEM (Search Engine Optimization / Search Engine Marketing)",
+          link: "/services/search-engine-marketing",
+        },
+        {
+          service: "Google Ads",
+          link: "/services/google-ads",
+        },
+        {
+          service: "Performance Marketing",
+          link: "/services/performance-marketing",
+        },
+        {
+          service: "Lead Generation",
+          link: "/services/lead-generation",
+        },
+        {
+          service: "E-mail Marketing",
+          link: "/services/e-mail-marketing",
+        },
+        {
+          service: "Content Marketing",
+          link: "/services/content-marketing",
+        },
+        {
+          service: "WhatsApp Marketing",
+          link: "/services/whatsapp-marketing",
+        },
+        {
+          service: "Bulk Message",
+          link: "/services/bulk-message",
+        },
+        {
+          service: "Video Ads (Promotional Video, CGI Video)",
+          link: "/services/video-ads",
+        },
+      ],
+    },
+    {
+      name: "Web & Software Development Services",
+      subServices: [
+        {
+          service: "Website Development",
+          link: "/services/website-development",
+        },
+        {
+          service: "App Development",
+          link: "/services/app-development",
+        },
+        {
+          service: "Software Development",
+          link: "/services/software-development",
+        },
+        
+        
+      ],
+    },
+  ];
+
+  const [selectedService, setSelectedService] = useState(services[0]);
+
+  const handleServiceClick = (service) => {
+    setSelectedService(service);
+  };
 
   const handleMenu = () => setMenu((prev) => !prev);
   const handleClick = (index) => setSelect(index);
@@ -23,7 +96,43 @@ export default function Navbar() {
     { name: "Home", icon: <AiOutlineHome />, link: "/" },
     { name: "About", icon: <IoInformationCircleOutline />, link: "/about" },
     {
-      name: "Services",
+      name: (
+        <div className=" group">
+          <div className="">Services</div>
+          <div className="w-full absolute left-0 flex justify-center items-center group-hover:h-20 ">
+            <div className="absolute hidden group-hover:block bg-[#00000046] p-4 rounded-xl w-[70rem] top-[2rem]">
+            <div className="">
+            <div className=" pr-4 flex">
+                {services.map((service) => (
+                  <button
+                    key={service.name}
+                    onClick={() => handleServiceClick(service)}
+                    className={`block text-left px-3 py-2 rounded-t-lg transition-colors  ${
+                      selectedService.name === service.name ? "bg-white text-blue-500 text-xl " : " text-white hover:text-blue-400 text-xl hover:bg-gray-200"
+                    }`}
+                  >
+                    {service.name}
+                  </button>
+                ))}
+              </div>
+              <div className=" border-l  bg-white text-sm pt-5 rounded-b-lg text-black">
+                {selectedService.subServices.map((subService, index) => (
+                  <Link 
+                    key={index}
+                    href={subService.link}
+                    className="block px-5 py-2 hover:bg-gray-100 rounded-md transition-colors"
+                  >
+                    {subService.service}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+              
+            </div>
+          </div>
+        </div>
+      ),
       icon: <MdOutlineMiscellaneousServices />,
       link: "/services",
     },
@@ -39,7 +148,10 @@ export default function Navbar() {
     >
       <div className="w-full max-w-[1250px] max-lg:w-[90%] flex justify-between items-center font-medium">
         {/* LOGO */}
-        <Link href={'/'} className="text-4xl flex flex-col max-lg:text-lg text-blue-500 font-black font-[Quicksand] text-center">
+        <Link
+          href={"/"}
+          className="text-4xl flex flex-col max-lg:text-lg text-blue-500 font-black font-[Quicksand] text-center"
+        >
           Pracharkar{" "}
           <span className="max-lg:text-sm text-lg text-gray-500">
             Solutions
@@ -47,7 +159,11 @@ export default function Navbar() {
         </Link>
 
         {/* DESKTOP MENU */}
-        <ul className={`flex transition-colors ${theme ? "bg-gray-900 border-t" : "bg-white"} gap-12 px-2 shadow-md rounded-md max-lg:hidden`}>
+        <ul
+          className={`flex transition-colors ${
+            theme ? "bg-gray-900 border-t" : "bg-white"
+          } gap-12 px-2 shadow-md rounded-md max-lg:hidden`}
+        >
           {menuItems.map((menu, index) => (
             <li
               key={index}
@@ -77,7 +193,7 @@ export default function Navbar() {
             Get Free Consultant
           </button>
         </div>
-        <ThemeToggle />  
+        <ThemeToggle />
         {/* ENQUIRY FORM MODAL */}
         {isOpen && (
           <motion.div
@@ -152,8 +268,14 @@ export default function Navbar() {
         )}
 
         {/* MOBILE MENU */}
-        <div className={`absolute right-5 hidden max-lg:block transition-colors 
-           ${menu ? "w-[90vw] h-[88vh] rounded-3xl  bg-blue-300  top-4 " : "right-0 rounded-3xl text-black"}`}>
+        <div
+          className={`absolute right-5 hidden max-lg:block transition-colors 
+           ${
+             menu
+               ? "w-[90vw] h-[88vh] rounded-3xl  bg-blue-300  top-4 "
+               : "right-0 rounded-3xl text-black"
+           }`}
+        >
           <div className="w-full h-full flex justify-end items-start">
             {menu ? (
               <div>
