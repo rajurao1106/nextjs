@@ -78,7 +78,7 @@ export default function AboutUs() {
           <AnimatePresence mode="wait">
             <motion.img
               key={activeSection}
-              src={sections[activeSection].image}
+              href={sections[activeSection].image}
               alt={sections[activeSection].title}
               className="w-64 h-64 md:w-96 md:h-96 object-cover rounded-xl"
               initial={{ opacity: 0, y: 20 }}
