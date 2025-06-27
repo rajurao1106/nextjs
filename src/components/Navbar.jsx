@@ -37,6 +37,10 @@ export default function Navbar() {
           link: "/services/performance-marketing",
         },
         {
+          service: "Political Campaign Management",
+          link: "/services/political-campaign-management",
+        },
+        {
           service: "Lead Generation",
           link: "/services/lead-generation",
         },
