@@ -8,6 +8,7 @@ import { useTheme } from "../../components/theme-context";
 import image1 from "../../images/portfolio/image1.png";
 import image2 from "../../images/portfolio/image2.png";
 import image3 from "../../images/portfolio/image3.png";
+import image4 from "../../images/portfolio/image4.png";
 
 const WorkSection = () => {
   const { theme } = useTheme();
@@ -45,9 +46,9 @@ const WorkSection = () => {
       category: "Web Design",
       bgColor: "bg-green-500",
       textColor: "text-black",
-      image: image3,
+      image: image4,
       size: "col-span-2 row-span-1",
-      link: "https://origenpharmaceutical.com/",
+      link: "https://drkunalsayani.com/",
     },
   ];
 
