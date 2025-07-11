@@ -15,7 +15,7 @@ const WorkSection = () => {
 
   const projects = [
     {
-      title: "Homepage for Talent Search",
+      title: "Tally Zone",
       category: "Web Design",
       bgColor: "bg-blue-800",
       textColor: "text-white",
@@ -24,8 +24,8 @@ const WorkSection = () => {
       link: "https://tallyzone.in/",
     },
     {
-      title: "Branding for Health",
-      category: "Branding",
+      title: "Origen Pharmaceutical",
+      category: "Web Design",
       bgColor: "bg-blue-500",
       textColor: "text-white",
       image: image2,
@@ -33,16 +33,16 @@ const WorkSection = () => {
       link: "https://origenpharmaceutical.com/",
     },
     {
-      title: "Clean Design for Messaging App",
-      category: "UI/UX",
+      title: "SNR Capitals",
+      category: "Web Design",
       bgColor: "bg-green-500",
       textColor: "text-black",
       image: image3,
       size: "col-span-2 row-span-1",
-      link: "https://origenpharmaceutical.com/",
+      link: "https://snrcapitals.in/",
     },
     {
-      title: "Kunal Sayani",
+      title: "Dr. Kunal Sayani",
       category: "Web Design",
       bgColor: "bg-green-500",
       textColor: "text-black",
