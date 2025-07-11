@@ -78,7 +78,7 @@ const Footer = [
         >
           <h3 className="text-xl font-bold">Office Address</h3>
           <p className="mt-4 text-md">📍 Head Office : Shivanand Nagar sector-1, Khamtari, Raipur, Chhattisgarh</p>
-          <p className="mt-4 text-md">📍 53, First Floor, Gorakhnath Society, Gayatri Nagar, Zingabai Takli, Nagpur, Maharashtra 440030</p>
+          <p className="mt-4 text-md">📍 Nagpur, Maharashtra </p>
           <p className="mt-4 text-md">📍 Magarpatta, Pune, Maharashtra</p>
           
          
