@@ -16,7 +16,7 @@ const WorkSection = () => {
       category: "Web Design",
       bgColor: "bg-blue-800",
       textColor: "text-white",
-      image: image1, // Placeholder image path
+      image: "../../images/portfolio/image1.png, // Placeholder image path
       size: "col-span-2 row-span-2", // Larger card
       link:"https://tallyzone.in/"
     },
@@ -25,7 +25,7 @@ const WorkSection = () => {
       category: "Branding",
       bgColor: "bg-blue-500",
       textColor: "text-white",
-      image: image2,
+      image: "../../images/portfolio/image2.png,
       size: "col-span-1 row-span-2",
       link:"https://origenpharmaceutical.com/"
     },
@@ -34,7 +34,7 @@ const WorkSection = () => {
       category: "UI/UX",
       bgColor: "bg-green-500",
       textColor: "text-black",
-      image: image3,
+      image: "../../images/portfolio/image3.png,
       size: "col-span-2 row-span-1",
       link:"https://origenpharmaceutical.com/"
     },
@@ -43,7 +43,7 @@ const WorkSection = () => {
       category: "Web Design",
       bgColor: "bg-green-500",
       textColor: "text-black",
-      image: image4,
+      image: "../../images/portfolio/image3.png,
       size: "col-span-2 row-span-1",
       link:"https://origenpharmaceutical.com/"
     },
@@ -80,6 +80,8 @@ const WorkSection = () => {
                 <Image
                   src={project.image}
                   alt={project.title}
+                  width={1000}
+                    height={1000}
                   className="max-lg:w-full w-[60rem] object-cover rounded-md"
                 />
               </Link>
