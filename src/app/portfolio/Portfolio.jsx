@@ -5,6 +5,7 @@ import Image from "next/image";
 import image1 from "../../images/portfolio/image1.png";
 import image2 from "../../images/portfolio/image2.png";
 import image3 from "../../images/portfolio/image3.png";
+import image4 from "../../images/portfolio/image4.png";
 import { useTheme } from "../../components/theme-context";
 
 const WorkSection = () => {
@@ -34,6 +35,15 @@ const WorkSection = () => {
       bgColor: "bg-green-500",
       textColor: "text-black",
       image: image3,
+      size: "col-span-2 row-span-1",
+      link:"https://origenpharmaceutical.com/"
+    },
+       {
+      title: "Kunal Syani",
+      category: "Web Design",
+      bgColor: "bg-green-500",
+      textColor: "text-black",
+      image: image4,
       size: "col-span-2 row-span-1",
       link:"https://origenpharmaceutical.com/"
     },
