@@ -104,7 +104,7 @@ export default function Navbar() {
         <div className=" group">
           <div className="">Services</div>
           <div className="w-full absolute left-0 flex justify-center items-center group-hover:h-20 ">
-            <div className="absolute hidden group-hover:block bg-[#00000046] p-4 rounded-xl w-[70rem] top-[2rem]">
+            <div className="absolute hidden group-hover:block bg-[#0000009f] p-4 rounded-xl w-[70rem] top-[2rem]">
             <div className="">
             <div className=" pr-4 flex">
                 {services.map((service) => (
