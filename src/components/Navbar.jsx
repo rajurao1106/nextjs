@@ -156,7 +156,7 @@ export default function Navbar() {
           href={"/"}
           className="text-4xl flex flex-col max-lg:text-lg text-blue-500 font-black font-[Quicksand] text-center"
         >
-          Pracharkar{" "}
+          Pracharkar.{" "}
           <span className="max-lg:text-sm text-lg text-gray-500">
             Solutions
           </span>
