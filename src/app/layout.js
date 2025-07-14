@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="flex flex-col min-h-screen">
         <ThemeProvider>
-          <ScrollProgressBar />
+          {/* <ScrollProgressBar /> */}
           <ScrollToTop />
           <Whatsapp />
           <Navbar />  {/* ✅ Now inside ThemeProvider */}

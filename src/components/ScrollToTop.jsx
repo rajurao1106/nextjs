@@ -1,24 +1,30 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { FaArrowUp } from "react-icons/fa6";
-import { motion, AnimatePresence } from "framer-motion"; // Added for better animations
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
-  // Scroll handler with debouncing for better performance
   useEffect(() => {
     let timeoutId;
-    const handleScroll = () => {
+
+    const updateScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = Math.min(scrollTop / docHeight, 1);
+      setScrollProgress(progress);
+
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
-        setIsVisible(window.scrollY > 300);
+        setIsVisible(scrollTop > 300);
       }, 100);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", updateScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", updateScroll);
       clearTimeout(timeoutId);
     };
   }, []);
@@ -26,6 +32,12 @@ export default function ScrollToTop() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const radius = 24;
+  const stroke = 4;
+  const normalizedRadius = radius - stroke * 0.5;
+  const circumference = normalizedRadius * 2 * Math.PI;
+  const strokeDashoffset = circumference - scrollProgress * circumference;
 
   return (
     <AnimatePresence>
@@ -44,14 +56,39 @@ export default function ScrollToTop() {
             bg-gradient-to-br from-red-500 to-red-600
             text-white shadow-md
             flex items-center justify-center
-            focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2
             transition-colors duration-200
             hover:from-red-600 hover:to-red-700
           `}
         >
           <FaArrowUp className="text-xl" />
-          {/* Optional tooltip */}
-          <span className="sr-only">Scroll to top</span>
+          {/* Progress Circle */}
+          <svg
+            className="absolute inset-0 w-full h-full transform rotate-[-90deg]"
+            viewBox="0 0 48 48"
+          >
+            <circle
+              cx="24"
+              cy="24"
+              r={normalizedRadius}
+              fill="transparent"
+              stroke="rgba(255,255,255,0.2)"
+              strokeWidth={stroke}
+            />
+            <motion.circle
+              cx="24"
+              cy="24"
+              r={normalizedRadius}
+              fill="transparent"
+              stroke="white"
+              strokeWidth={stroke}
+              strokeDasharray={circumference}
+              strokeDashoffset={strokeDashoffset}
+              strokeLinecap="round"
+              initial={false}
+              animate={{ strokeDashoffset }}
+              transition={{ duration: 0.2 }}
+            />
+          </svg>
         </motion.button>
       )}
     </AnimatePresence>
