@@ -95,7 +95,7 @@ const ContactUs = () => {
                 className={`w-full p-3 rounded-md outline-none border-b-2 ${
                   theme ? "border-gray-500 focus:border-gray-300" : "border-blue-500 focus:border-gray-500"
                 }`}
-              ></textarea>
+              ></textarea> 
               <button
                 type="submit"
                 className="mt-4 bg-red-500 text-white px-6 py-2 rounded-md hover:bg-red-600 transition relative shadow-md"
