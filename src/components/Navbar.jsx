@@ -10,6 +10,8 @@ import { FaEnvelope, FaArrowRight, FaPhoneAlt } from "react-icons/fa"; // Added 
 import { motion } from "framer-motion";
 import { useTheme } from "./theme-context";
 import ThemeToggle from "./ThemeToggle";
+import Image from "next/image";
+import logoImg from "@/images/navbar/logo.jpeg"
 
 export default function Navbar() {
   const { theme } = useTheme();
@@ -107,13 +109,19 @@ export default function Navbar() {
       }`}
     >
       <div className="w-full max-w-[1250px] max-lg:w-[90%] flex justify-between items-center font-medium">
-        {/* LOGO */}
-        <Link
-          href="/"
-          className="text-4xl flex flex-col max-lg:text-lg text-blue-500 font-black font-[Quicksand] text-center"
-        >
-          Pracharkar <span className="max-lg:text-sm text-lg text-gray-500">Solutions</span>
-        </Link>
+    {/* LOGO */}
+<Link
+  href="/"
+  className="text-4xl py-2 flex flex-col max-lg:text-lg text-blue-500 font-black font-[Quicksand] text-center"
+>
+  <Image 
+    src={logoImg} 
+    alt="Pracharkar Solutions Logo" 
+    width={80} 
+    height={80} 
+    priority 
+  />
+</Link>
 
         {/* DESKTOP MENU */}
         <ul

@@ -78,7 +78,7 @@ const Footer = [
           transition={{ duration: 1.2 }}
         >
           <h3 className="text-xl font-bold">Office Address</h3>
-          <p className="mt-4 text-md">📍 Head Office : Shivanand Nagar sector-1, Khamtari, Raipur, Chhattisgarh</p>
+          <p className="mt-4 text-md">📍 Head Office : Raipur, Chhattisgarh</p>
           <p className="mt-4 text-md">📍 Nagpur, Maharashtra </p>
           <p className="mt-4 text-md">📍 Magarpatta, Pune, Maharashtra</p>
           

@@ -21,7 +21,7 @@ const ContactUs = () => {
             {
               icon: <FaPhoneAlt className="text-purple-600 text-xl" />,
               title: "Phone",
-              text: "+91 8982804998",
+              text: "+91 9770142242",
               bgHover: "hover:bg-purple-400",
             },
             {
