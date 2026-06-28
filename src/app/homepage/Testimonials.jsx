@@ -8,12 +8,27 @@ import { Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
 import { FaQuoteLeft } from "react-icons/fa";
 
 const testimonials = [
-  { name: "John Doe", review: "This agency transformed our brand!" },
-  { name: "Jane Smith", review: "A truly professional and creative team!" },
-  { name: "Alice Brown", review: "Their strategies boosted our engagement." },
-  { name: "Michael Lee", review: "Highly recommended for advertising needs!" },
+  { 
+    name: "Amit Verma", 
+    review: "Their performance marketing campaigns scaled our lead generation by 3x. The ROAS on our Meta and Google ads has been phenomenal." 
+  },
+  { 
+    name: "Priya Desai", 
+    review: "They built a lightning-fast, premium website for us. The UI/UX is incredibly clean, and our online conversions spiked immediately after launch." 
+  },
+  { 
+    name: "Rohan Kapoor", 
+    review: "Our Instagram presence grew exponentially in just three months. The team really understands content strategy and how to build a highly engaged community." 
+  },
+  { 
+    name: "Sneha Joshi", 
+    review: "From developing our full-stack website to managing our digital ad spends, the team delivered beyond expectations. Highly recommend them for end-to-end growth." 
+  },
+  { 
+    name: "Vikram Singh", 
+    review: "The quality of inbound leads from their localized SEO and Google Ads strategy is top-notch. A truly professional agency that actually delivers ROI." 
+  }
 ];
-
 const Testimonials = () => {
   return (
     <div className="w-full py-16 bg-gray-900 flex flex-col items-center text-white">
