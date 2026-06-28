@@ -58,7 +58,7 @@ const ContactUs = () => {
                 collaboration opportunities, or just want to say hello, we're here to listen.
               </p>
               <p className="text-2xl font-bold mt-2">Get In Touch</p>
-              <p className="text-base">+91-8982804998</p>
+              {/* <p className="text-base">+91-8982804998</p> */}
               <p className="text-base">info@pracharkarsolutions.com</p>
             </div>
           </div>

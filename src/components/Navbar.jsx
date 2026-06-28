@@ -180,10 +180,10 @@ export default function Navbar() {
                       <FaEnvelope className="text-blue-600" />
                       <span>Email: info@pracharkarsolutions.com</span>
                     </div>
-                    <div className="flex items-center gap-3">
+                    {/* <div className="flex items-center gap-3">
                       <FaPhoneAlt className="text-blue-600" />
                       <span>Phone: +91-8982804998</span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 

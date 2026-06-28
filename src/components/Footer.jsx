@@ -45,7 +45,7 @@ const Footer = [
           </p>
           <h2 className="text-2xl font-bold">Contact Us</h2>
           <p className="mt-2 text-md">📧 info@pracharkarsolutions.com</p>
-          <p className="mt-2 text-md">📞 +91-8982804998</p>
+          {/* <p className="mt-2 text-md">📞 +91-8982804998</p> */}
           <p className="mt-2 text-md">📞 +91-9770142242</p>
         </motion.div>
 
