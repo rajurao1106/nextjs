@@ -28,9 +28,9 @@ export default function NetworkingSection() {
             communication, innovation, and technology-driven solutions for
             growth and success.
           </p>
-          <button className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-full shadow-md hover:bg-blue-600 transition">
+          <a href="/about" className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-full shadow-md hover:bg-blue-600 transition">
             Learn More
-          </button>
+          </a>
 
           {/* Stats */}
           <div className="flex flex-wrap justify-center lg:justify-start mt-8 gap-6">

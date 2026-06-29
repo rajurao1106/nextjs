@@ -6,12 +6,12 @@ import { AiOutlineHome, AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { IoInformationCircleOutline, IoCallOutline } from "react-icons/io5";
 import { MdOutlineMiscellaneousServices } from "react-icons/md";
 import { LuBriefcaseBusiness } from "react-icons/lu";
-import { FaEnvelope, FaArrowRight, FaPhoneAlt } from "react-icons/fa"; // Added missing icons
+import { FaEnvelope, FaArrowRight, FaPhoneAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useTheme } from "./theme-context";
 import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
-import logoImg from "@/images/navbar/logo.jpeg"
+import logoImg from "@/images/navbar/logo.jpeg";
 
 export default function Navbar() {
   const { theme } = useTheme();
@@ -23,11 +23,20 @@ export default function Navbar() {
     {
       name: "Digital Marketing Services",
       subServices: [
-        { service: "Social Media Marketing", link: "/services/social-media-marketing" },
+        {
+          service: "Social Media Marketing",
+          link: "/services/social-media-marketing",
+        },
         { service: "SEO/SEM", link: "/services/search-engine-marketing" },
         { service: "Google Ads", link: "/services/google-ads" },
-        { service: "Performance Marketing", link: "/services/performance-marketing" },
-        { service: "Political Campaign Management", link: "/services/political-campaign-management" },
+        {
+          service: "Performance Marketing",
+          link: "/services/performance-marketing",
+        },
+        {
+          service: "Political Campaign Management",
+          link: "/services/political-campaign-management",
+        },
         { service: "Lead Generation", link: "/services/lead-generation" },
         { service: "E-mail Marketing", link: "/services/e-mail-marketing" },
         { service: "Content Marketing", link: "/services/content-marketing" },
@@ -39,9 +48,15 @@ export default function Navbar() {
     {
       name: "Web & Software Development Services",
       subServices: [
-        { service: "Website Development", link: "/services/website-development" },
+        {
+          service: "Website Development",
+          link: "/services/website-development",
+        },
         { service: "App Development", link: "/services/app-development" },
-        { service: "Software Development", link: "/services/software-development" },
+        {
+          service: "Software Development",
+          link: "/services/software-development",
+        },
       ],
     },
   ];
@@ -105,28 +120,33 @@ export default function Navbar() {
   return (
     <nav
       className={`w-full flex flex-col justify-center items-center pt-1 max-lg:pt-3 fixed z-50 transition-all ${
-        theme === "dark" ? "bg-gray-900" : "bg-white"
+        theme ? "" : ""
       }`}
     >
       <div className="w-full max-w-[1250px] max-lg:w-[90%] flex justify-between items-center font-medium">
-    {/* LOGO */}
-<Link
-  href="/"
-  className="text-4xl py-2 flex flex-col max-lg:text-lg text-blue-500 font-black font-[Quicksand] text-center"
->
-  <Image 
-    src={logoImg} 
-    alt="Pracharkar Solutions Logo" 
-    width={80} 
-    height={80} 
-    priority 
-  />
-</Link>
+        
+        {/* LOGO */}
+        <Link
+          href="/"
+          className="flex flex-col text-blue-500 font-black font-[Quicksand] text-center shrink-0 z-50"
+        >
+          <Image
+            src={logoImg}
+            alt="Pracharkar Solutions Logo"
+            width={90}
+            height={90}
+            priority
+            /* Added responsive sizing classes (w-14, w-16, w-[90px]) and object-contain */
+            className={`p-2 w-14 h-14 sm:w-16 sm:h-16 lg:w-[90px] lg:h-[90px] object-contain transition-all duration-300 ${
+              theme ? "bg-white rounded-md" : ""
+            }`}
+          />
+        </Link>
 
         {/* DESKTOP MENU */}
         <ul
           className={`flex transition-colors ${
-            theme === "dark" ? "bg-gray-900 border-t" : "bg-white"
+            theme ? "bg-gray-900 border-t" : "bg-white"
           } gap-12 px-2 shadow-md rounded-md max-lg:hidden`}
         >
           {menuItems.map((menu, index) => (
@@ -134,10 +154,15 @@ export default function Navbar() {
               key={index}
               onClick={() => handleClick(index)}
               className={`border-b-2 transition-all cursor-pointer ${
-                select === index ? "border-blue-500 text-blue-500" : "border-transparent"
+                select === index
+                  ? "border-blue-500 text-blue-500"
+                  : "border-transparent"
               }`}
             >
-              <Link href={menu.link} className="flex items-center gap-2 px-3 py-3">
+              <Link
+                href={menu.link}
+                className="flex items-center gap-2 px-3 py-3"
+              >
                 {menu.icon} {menu.name}
               </Link>
             </li>
@@ -146,13 +171,14 @@ export default function Navbar() {
 
         {/* BUTTON & THEME TOGGLE */}
         <div className="flex justify-center items-center gap-4">
+          <ThemeToggle />
           <button
             onClick={() => setIsOpen(true)}
             className="bg-red-500 max-lg:hidden text-white px-3 py-3 rounded-lg shadow-md transition-all hover:bg-red-700"
           >
             Get Free Consultant
           </button>
-          <ThemeToggle />
+          
         </div>
 
         {/* ENQUIRY FORM MODAL */}
@@ -169,29 +195,31 @@ export default function Navbar() {
               className="bg-gray-50 p-8 rounded-2xl shadow-lg max-w-6xl w-full mx-4"
             >
               <div className="flex justify-end">
-                <button onClick={() => setIsOpen(false)} className="text-2xl text-gray-600">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="text-2xl text-gray-600"
+                >
                   <AiOutlineClose />
                 </button>
               </div>
               <div className="grid md:grid-cols-2 gap-10">
                 {/* Left Section */}
                 <div>
-                  <h3 className="text-sm text-gray-500 uppercase">We're Here to Help</h3>
+                  <h3 className="text-sm text-gray-500 uppercase">
+                    We're Here to Help
+                  </h3>
                   <h2 className="text-4xl font-bold mt-2 text-gray-900">
                     Discuss Your Advertising Needs
                   </h2>
                   <p className="mt-4 text-gray-600">
-                    Looking for creative marketing solutions tailored to your brand? Let’s connect and craft your next big campaign.
+                    Looking for creative marketing solutions tailored to your
+                    brand? Let’s connect and craft your next big campaign.
                   </p>
                   <div className="mt-6 space-y-4 text-gray-700">
                     <div className="flex items-center gap-3">
                       <FaEnvelope className="text-blue-600" />
                       <span>Email: info@pracharkarsolutions.com</span>
                     </div>
-                    {/* <div className="flex items-center gap-3">
-                      <FaPhoneAlt className="text-blue-600" />
-                      <span>Phone: +91-8982804998</span>
-                    </div> */}
                   </div>
                 </div>
 
@@ -256,15 +284,19 @@ export default function Navbar() {
               <div className="w-full">
                 <div
                   onClick={handleMenu}
-                  className="text-2xl w-10 p-2 rounded shadow-md bg-blue-300 text-black ml-auto"
+                  className="text-2xl w-10 p-2 rounded shadow-md bg-blue-300 text-black ml-auto cursor-pointer"
                 >
                   <AiOutlineClose />
                 </div>
                 <ul className="w-full text-center text-3xl text-white flex flex-col gap-8 mt-4">
                   {menuItems.map((item, index) => (
                     <li key={index} onClick={() => setMenu(false)}>
-                      <Link href={item.link} className="flex items-center justify-center gap-2">
-                        {item.icon} {typeof item.name === "string" ? item.name : "Services"}
+                      <Link
+                        href={item.link}
+                        className="flex items-center justify-center gap-2"
+                      >
+                        {item.icon}{" "}
+                        {typeof item.name === "string" ? item.name : "Services"}
                       </Link>
                     </li>
                   ))}
@@ -284,7 +316,7 @@ export default function Navbar() {
             ) : (
               <div
                 onClick={handleMenu}
-                className="text-2xl w-10 p-2 rounded shadow-md bg-white"
+                className={`text-2xl w-10 p-2 rounded shadow-md bg-white cursor-pointer  ${theme ? "text-black" : ""}`}
               >
                 <AiOutlineMenu />
               </div>
