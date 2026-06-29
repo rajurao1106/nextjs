@@ -147,13 +147,13 @@ export default function Navbar() {
         <ul
           className={`flex transition-colors ${
             theme ? "bg-gray-900 border-t" : "bg-white"
-          } gap-12 px-2 shadow-md rounded-md max-lg:hidden`}
+          } gap-12 px-2 rounded-md max-lg:hidden`}
         >
           {menuItems.map((menu, index) => (
             <li
               key={index}
               onClick={() => handleClick(index)}
-              className={`border-b-2 transition-all cursor-pointer ${
+              className={`transition-all cursor-pointer ${
                 select === index
                   ? "border-blue-500 text-blue-500"
                   : "border-transparent"
