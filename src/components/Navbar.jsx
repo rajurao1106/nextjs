@@ -120,7 +120,7 @@ export default function Navbar() {
   return (
     <nav
       className={`w-full flex flex-col justify-center items-center pt-1 max-lg:pt-3 fixed z-50 transition-all ${
-        theme ? "" : ""
+        theme ? "bg-gray-900 py-2" : "bg-white"
       }`}
     >
       <div className="w-full max-w-[1250px] max-lg:w-[90%] flex justify-between items-center font-medium">
